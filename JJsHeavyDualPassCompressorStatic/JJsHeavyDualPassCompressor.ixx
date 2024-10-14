@@ -22,8 +22,8 @@ export class JJsHeavyDualPassCompressor
 public:
 	JJsHeavyDualPassCompressor() = default;
 
-	void CompressSingleFile(std::string inFile, std::string outFile);
-	void CompressSingleFile(std::wstring inFile, std::wstring outFile);
+	void CompressSingleFile(std::string inFilename, std::string outFilename);
+	void CompressSingleFile(std::wstring inFilename, std::wstring outFilename);
 
 private:
 	JJsHeavyDualPassCompressorSettings settings;
