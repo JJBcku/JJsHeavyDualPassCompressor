@@ -18,5 +18,8 @@
     <ClCompile Include="JJsHeavyDualPassCompressor.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="JJsHeavyDualPassCompressor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
