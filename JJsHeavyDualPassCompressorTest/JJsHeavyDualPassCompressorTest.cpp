@@ -9,7 +9,7 @@ int main()
 
     try
     {
-        auto data = main.CompressSingleFile("Test.bin");
+        main.CompressSingleFile("Test.bin", "");
     }
     catch (std::exception ex)
     {
