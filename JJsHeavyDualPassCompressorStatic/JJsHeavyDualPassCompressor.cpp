@@ -12,10 +12,22 @@ JJsHeavyDualPassCompressorSettings::JJsHeavyDualPassCompressorSettings()
 	padding8 = false;
 }
 
-void JJsHeavyDualPassCompressor::CompressSingleFile(std::string filename)
+void JJsHeavyDualPassCompressor::CompressSingleFile(std::string inFile, std::string outFile)
 {
-	if (!std::filesystem::exists(filename))
-	{
+	if (!std::filesystem::exists(inFile))
+		throw BaseExceptionA("CompressSingleFile Error: Program was given filename for a non-existent file: " + inFile);
 
-	}
+	if (!std::filesystem::is_regular_file(inFile))
+		throw BaseExceptionA("CompressSingleFile Error: Program was given an erroneous file's path: " + inFile);
+
+}
+
+void JJsHeavyDualPassCompressor::CompressSingleFile(std::wstring inFile, std::wstring outFile)
+{
+	if (!std::filesystem::exists(inFile))
+		throw BaseExceptionW(L"CompressSingleFile Error: Program was given filename for a non-existent file: " + inFile);
+
+	if (!std::filesystem::is_regular_file(inFile))
+		throw BaseExceptionW(L"CompressSingleFile Error: Program was given an erroneous file's path: " + inFile);
+
 }

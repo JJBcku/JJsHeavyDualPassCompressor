@@ -1,6 +1,7 @@
 export module JJsHeavyDualPassCompressor;
 
 import std;
+import JJsHeavyDualPassCompressor.Exceptions;
 
 export struct JJsHeavyDualPassCompressorSettings
 {
@@ -21,7 +22,8 @@ export class JJsHeavyDualPassCompressor
 public:
 	JJsHeavyDualPassCompressor() = default;
 
-	void CompressSingleFile(std::string filename);
+	void CompressSingleFile(std::string inFile, std::string outFile);
+	void CompressSingleFile(std::wstring inFile, std::wstring outFile);
 
 private:
 	JJsHeavyDualPassCompressorSettings settings;

@@ -1,19 +1,19 @@
 module JJsHeavyDualPassCompressor.Exceptions;
 
-BaseExceptionA::BaseExceptionA(std::string exception) : what(exception)
+BaseExceptionA::BaseExceptionA(std::string exception) : data(exception)
 {
 }
 
-const std::string& BaseExceptionA::What() const
+const std::string& BaseExceptionA::what() const
 {
-	return what;
+	return data;
 }
 
-BaseExceptionW::BaseExceptionW(std::wstring exception) : what(exception)
+BaseExceptionW::BaseExceptionW(std::wstring exception) : data(exception)
 {
 }
 
-const std::wstring& BaseExceptionW::What() const
+const std::wstring& BaseExceptionW::what() const
 {
-	return what;
+	return data;
 }

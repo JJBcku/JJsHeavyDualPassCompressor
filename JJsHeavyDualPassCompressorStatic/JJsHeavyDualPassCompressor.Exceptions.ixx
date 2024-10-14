@@ -7,10 +7,10 @@ export class BaseExceptionA
 public:
 	BaseExceptionA(std::string exception);
 
-	const std::string& What() const;
+	const std::string& what() const;
 
 private:
-	std::string what;
+	std::string data;
 };
 
 export class BaseExceptionW
@@ -18,8 +18,8 @@ export class BaseExceptionW
 public:
 	BaseExceptionW(std::wstring exception);
 
-	const std::wstring& What() const;
+	const std::wstring& what() const;
 
 private:
-	std::wstring what;
+	std::wstring data;
 };
