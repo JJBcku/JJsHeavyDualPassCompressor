@@ -21,5 +21,11 @@
     <ClCompile Include="JJsHeavyDualPassCompressor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="JJsHeavyDualPassCompressor.Exceptions.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JJsHeavyDualPassCompressor.Exceptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

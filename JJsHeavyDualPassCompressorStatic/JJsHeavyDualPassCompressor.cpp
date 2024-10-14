@@ -11,3 +11,11 @@ JJsHeavyDualPassCompressorSettings::JJsHeavyDualPassCompressorSettings()
 	padding7 = false;
 	padding8 = false;
 }
+
+void JJsHeavyDualPassCompressor::CompressSingleFile(std::string filename)
+{
+	if (!std::filesystem::exists(filename))
+	{
+
+	}
+}

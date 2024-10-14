@@ -1,5 +1,7 @@
 export module JJsHeavyDualPassCompressor;
 
+import std;
+
 export struct JJsHeavyDualPassCompressorSettings
 {
 	bool padding1;
@@ -18,6 +20,8 @@ export class JJsHeavyDualPassCompressor
 {
 public:
 	JJsHeavyDualPassCompressor() = default;
+
+	void CompressSingleFile(std::string filename);
 
 private:
 	JJsHeavyDualPassCompressorSettings settings;

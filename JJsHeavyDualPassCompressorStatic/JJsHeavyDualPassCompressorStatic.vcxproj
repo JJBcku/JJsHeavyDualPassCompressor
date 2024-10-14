@@ -156,6 +156,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="JJsHeavyDualPassCompressor.cpp" />
+    <ClCompile Include="JJsHeavyDualPassCompressor.Exceptions.cpp" />
+    <ClCompile Include="JJsHeavyDualPassCompressor.Exceptions.ixx" />
     <ClCompile Include="JJsHeavyDualPassCompressor.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
