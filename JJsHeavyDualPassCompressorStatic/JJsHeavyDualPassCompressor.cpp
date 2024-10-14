@@ -48,6 +48,21 @@ void JJsHeavyDualPassCompressor::CompressSingleFile(std::string inFilename, std:
 			", program could only read " + std::to_string(readSize) + " bytes");
 	}
 	inFile.close();
+
+	if (outFilename.empty())
+		outFilename = inFilename + ".jjhdpc";
+
+	std::ofstream outFile;
+	outFile.open(outFilename, std::ios_base::binary | std::ios_base::out | std::ios_base::trunc);
+
+	if (!outFile.is_open())
+		throw BaseExceptionA("CompressSingleFile Error: Program failed to open the output file: " + outFilename);
+
+	outFile.flush();
+	if (!outFile.good())
+		throw BaseExceptionA("CompressSingleFile Error: Program failed to flush data to the output file: " + outFilename);
+
+	outFile.close();
 }
 
 void JJsHeavyDualPassCompressor::CompressSingleFile(std::wstring inFilename, std::wstring outFilename)
@@ -86,4 +101,19 @@ void JJsHeavyDualPassCompressor::CompressSingleFile(std::wstring inFilename, std
 			L", program could only read " + std::to_wstring(readSize) + L" bytes");
 	}
 	inFile.close();
+
+	if (outFilename.empty())
+		outFilename = inFilename + L".jjhdpc";
+
+	std::ofstream outFile;
+	outFile.open(outFilename, std::ios_base::binary | std::ios_base::out | std::ios_base::trunc);
+
+	if (!outFile.is_open())
+		throw BaseExceptionW(L"CompressSingleFile Error: Program failed to open the output file: " + outFilename);
+
+	outFile.flush();
+	if (!outFile.good())
+		throw BaseExceptionW(L"CompressSingleFile Error: Program failed to flush data to the output file: " + outFilename);
+
+	outFile.close();
 }
