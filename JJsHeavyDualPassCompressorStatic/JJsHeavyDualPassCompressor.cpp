@@ -14,11 +14,16 @@ JJsHeavyDualPassCompressorSettings::JJsHeavyDualPassCompressorSettings()
 
 void JJsHeavyDualPassCompressor::CompressSingleFile(std::string inFilename, std::string outFilename)
 {
-	if (!std::filesystem::exists(inFilename))
+	std::filesystem::path inFilePath(inFilename);
+
+	if (!std::filesystem::exists(inFilePath))
 		throw BaseExceptionA("CompressSingleFile Error: Program was given filename of a non-existent file: " + inFilename);
 
-	if (!std::filesystem::is_regular_file(inFilename))
+	if (!std::filesystem::is_regular_file(inFilePath))
 		throw BaseExceptionA("CompressSingleFile Error: Given filename is not a name of a regular file: " + inFilename);
+
+	if (inFilePath.is_absolute())
+		throw BaseExceptionA("CompressSingleFile Error: Absolute file names are not allowed for single file mode: " + inFilename);
 
 	std::ifstream inFile;
 
@@ -67,11 +72,16 @@ void JJsHeavyDualPassCompressor::CompressSingleFile(std::string inFilename, std:
 
 void JJsHeavyDualPassCompressor::CompressSingleFile(std::wstring inFilename, std::wstring outFilename)
 {
-	if (!std::filesystem::exists(inFilename))
+	std::filesystem::path inFilePath(inFilename);
+
+	if (!std::filesystem::exists(inFilePath))
 		throw BaseExceptionW(L"CompressSingleFile Error: Program was given filename of a non-existent file: " + inFilename);
 
-	if (!std::filesystem::is_regular_file(inFilename))
+	if (!std::filesystem::is_regular_file(inFilePath))
 		throw BaseExceptionW(L"CompressSingleFile Error: Given filename is not a name of a regular file: " + inFilename);
+
+	if (inFilePath.is_absolute())
+		throw BaseExceptionW(L"CompressSingleFile Error: Absolute file names are not allowed for single file mode: " + inFilename);
 
 	std::ifstream inFile;
 
